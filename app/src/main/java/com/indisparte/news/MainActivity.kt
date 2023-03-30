@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        
+
         provider.getActivities(Activities.NewsActivity).navigate(this)
     }
 }
