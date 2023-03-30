@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.indisparte.news'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.indisparte.news"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -30,9 +30,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding{
+        enabled= true
+    }
+
 }
 
 dependencies {
+    implementation project(":search:search_presentation")
+    implementation project(":news:news_presentation")
 
     implementation Dependencies.core
     implementation Dependencies.appCompat
@@ -41,4 +48,7 @@ dependencies {
     testImplementation TestImplementation.jUnit
     androidTestImplementation AndroidTestImplementation.extJUnit
     androidTestImplementation AndroidTestImplementation.espresso
+
+    implementation LottieAnimations.lottieAnimationsKotlin
+    implementation LottieAnimations.lottieAnimation
 }
