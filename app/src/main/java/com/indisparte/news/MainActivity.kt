@@ -1,6 +1,8 @@
 package com.indisparte.news
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.indisparte.common_utils.Activities
 import com.indisparte.common_utils.Navigator
@@ -25,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        provider.getActivities(Activities.NewsActivity).navigate(this)
+        Handler(Looper.myLooper()!!).postDelayed({
+            provider.getActivities(Activities.NewsActivity).navigate(this)
+            finish()
+        }, 1500)
     }
 }
