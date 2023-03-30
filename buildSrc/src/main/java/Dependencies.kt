@@ -29,6 +29,7 @@ object Versions {
     const val swipeRefresh = "1.1.0"
 
     const val lottieAnimations = "3.4.2"
+    // TODO: Add navigation component
 }
 
 object Dependencies {
