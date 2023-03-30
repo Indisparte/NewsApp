@@ -1,20 +1,18 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'com.indisparte.news'
-    compileSdk 33
+    namespace 'com.indisparte.search_data'
+    compileSdk 32
 
     defaultConfig {
-        applicationId "com.indisparte.news"
         minSdk 21
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        targetSdk 32
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -30,25 +28,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
-    dataBinding{
-        enabled= true
-    }
-
 }
 
 dependencies {
-    implementation project(":search:search_presentation")
-    implementation project(":news:news_presentation")
-
     implementation Dependencies.core
     implementation Dependencies.appCompat
     implementation Dependencies.material
-    implementation Dependencies.constraintLayout
     testImplementation TestImplementation.jUnit
     androidTestImplementation AndroidTestImplementation.extJUnit
     androidTestImplementation AndroidTestImplementation.espresso
-
-    implementation LottieAnimations.lottieAnimationsKotlin
-    implementation LottieAnimations.lottieAnimation
 }
