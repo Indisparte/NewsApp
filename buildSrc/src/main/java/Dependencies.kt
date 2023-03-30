@@ -7,6 +7,8 @@ object Versions {
     const val extJUnit = "1.1.5"
     const val espresso = "3.5.1"
     const val lottieAnimation = "4.2.0"
+    const val hilt = "2.40.5"
+    const val hiltAndroid = "1.0.0"
 }
 
 object Dependencies {
@@ -54,9 +56,9 @@ object ViewModelDelegate {
 }
 
 object DaggerHilt {
-    const val hilt = ""
-    const val hiltAndroidCompiler = ""
-    const val hiltCompiler = ""
+    const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltAndroidCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltAndroid}"
+    const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 }
 
 object Room {
@@ -69,6 +71,7 @@ object CircularProgressBar {
 }
 
 object LottieAnimations {
-    const val lottieAnimationsKotlin = "com.airbnb.android:lottie-kotlin:${Versions.lottieAnimation}"
+    const val lottieAnimationsKotlin =
+        "com.airbnb.android:lottie-kotlin:${Versions.lottieAnimation}"
     const val lottieAnimation = "com.airbnb.android:lottie:${Versions.lottieAnimation}"
 }
