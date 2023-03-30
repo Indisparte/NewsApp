@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -43,12 +45,15 @@ dependencies {
 
     implementation Dependencies.core
     implementation Dependencies.appCompat
-    implementation Dependencies.material
+    implementation Dependencies.androidMaterial
     implementation Dependencies.constraintLayout
-    testImplementation TestImplementation.jUnit
-    androidTestImplementation AndroidTestImplementation.extJUnit
+    testImplementation TestImplementation.junit
+    androidTestImplementation AndroidTestImplementation.junit
     androidTestImplementation AndroidTestImplementation.espresso
 
-    implementation LottieAnimations.lottieAnimationsKotlin
-    implementation LottieAnimations.lottieAnimation
+    implementation LottieAnimations.lottieAnimations
+
+    implementation DaggerHilt.hilt
+    kapt DaggerHilt.hiltAndroidCompiler
+    kapt DaggerHilt.hiltCompiler
 }

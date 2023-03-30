@@ -34,8 +34,8 @@ dependencies {
 
     implementation Dependencies.core
     implementation Dependencies.appCompat
-    implementation Dependencies.material
-    testImplementation TestImplementation.jUnit
-    androidTestImplementation AndroidTestImplementation.extJUnit
+    implementation Dependencies.androidMaterial
+    testImplementation TestImplementation.junit
+    androidTestImplementation AndroidTestImplementation.junit
     androidTestImplementation AndroidTestImplementation.espresso
 }

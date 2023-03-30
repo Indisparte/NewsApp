@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'com.indisparte.search_data'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
+        targetSdk 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -33,8 +33,8 @@ android {
 dependencies {
     implementation Dependencies.core
     implementation Dependencies.appCompat
-    implementation Dependencies.material
-    testImplementation TestImplementation.jUnit
-    androidTestImplementation AndroidTestImplementation.extJUnit
+    implementation Dependencies.androidMaterial
+    testImplementation TestImplementation.junit
+    androidTestImplementation AndroidTestImplementation.junit
     androidTestImplementation AndroidTestImplementation.espresso
 }
