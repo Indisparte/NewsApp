@@ -1,17 +1,17 @@
-package com.indisparte.news_presentation.adapter
+package com.indisparte.search_presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.indisparte.news_domain.model.Article
-import com.indisparte.news_presentation.databinding.ListItemArticleBinding
+import com.indisparte.search_domain.model.Article
+import com.indisparte.search_presentation.databinding.ListItemSearchArticleBinding
 
 /**
  * @author Antonio Di Nuzzo (Indisparte)
  */
-class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class SearchNewsAdapter : RecyclerView.Adapter<SearchNewsAdapter.SearchNewsViewHolder>() {
 
     private val differCallback = object : DiffUtil.ItemCallback<Article>() {
 
@@ -27,13 +27,13 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     private val dataList = AsyncListDiffer(this, differCallback)
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchNewsViewHolder {
         val itemBinding =
-            ListItemArticleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return NewsViewHolder(itemBinding)
+            ListItemSearchArticleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return SearchNewsViewHolder(itemBinding)
     }
 
-    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SearchNewsViewHolder, position: Int) {
         holder.bind(dataList.currentList[position])
     }
 
@@ -45,8 +45,8 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
         get() = dataList.currentList
         set(value) = dataList.submitList(value)
 
-    inner class NewsViewHolder(
-        private val binding: ListItemArticleBinding
+    inner class SearchNewsViewHolder(
+        private val binding: ListItemSearchArticleBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Article) {
