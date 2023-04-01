@@ -1,16 +1,18 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
     namespace 'com.indisparte.news'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.indisparte.news"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -30,15 +32,37 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding{
+        enabled= true
+    }
+
 }
 
 dependencies {
+    implementation project(":search:search_presentation")
+    implementation project(":news:news_presentation")
+    implementation project(":common:common_utils")
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation project(":news:news_domain")
+    implementation project(":news:news_data")
+    implementation project(":search:search_domain")
+    implementation project(":search:search_data")
+
+    implementation Dependencies.core
+    implementation Dependencies.appCompat
+    implementation Dependencies.androidMaterial
+    implementation Dependencies.constraintLayout
+    testImplementation TestImplementation.junit
+    androidTestImplementation AndroidTestImplementation.junit
+    androidTestImplementation AndroidTestImplementation.espresso
+
+    implementation LottieAnimations.lottieAnimations
+
+    implementation DaggerHilt.hilt
+    kapt DaggerHilt.hiltAndroidCompiler
+    kapt DaggerHilt.hiltCompiler
+
+    implementation Room.room
+    kapt Room.roomCompiler
 }
