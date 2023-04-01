@@ -30,7 +30,7 @@ class NewsViewModel
         getNewsArticles()
     }
 
-    fun getNewsArticles() {
+    private fun getNewsArticles() {
         getNewsArticleUseCase().onEach {
             when (it) {
                 is Resources.Loading -> {
