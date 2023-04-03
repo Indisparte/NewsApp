@@ -34,7 +34,7 @@ android {
 
 dependencies {
 
-    implementation project(":search:search_domain")
+    implementation project(":domain:news")
     implementation project(":common:common_utils")
 
     implementation Dependencies.core

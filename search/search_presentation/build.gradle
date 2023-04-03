@@ -41,7 +41,7 @@ android {
 
 dependencies {
     implementation project(":common:common_utils")
-    implementation project(":search:search_domain")
+    implementation project(":domain:news")
 
     implementation Dependencies.core
     implementation Dependencies.appCompat

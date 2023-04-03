@@ -5,7 +5,7 @@ import com.indisparte.news.model.Article
 /**
  * @author Antonio Di Nuzzo (Indisparte)
  */
-interface NewsRepository {
-    suspend fun getNewsArticle(): List<Article>
+interface SearchRepository {
+    suspend fun getSearchArticles(map: MutableMap<String, String>): List<Article>
 
 }
