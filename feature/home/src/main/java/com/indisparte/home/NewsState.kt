@@ -3,7 +3,6 @@ package com.indisparte.home
 import com.indisparte.news.model.Article
 
 
-private val TAG = NewsState::class.simpleName
 
 /**
  * @author Antonio Di Nuzzo (Indisparte)

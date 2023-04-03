@@ -4,9 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.indisparte.news_data.room.NewsDAO
-import com.indisparte.news_domain.model.Article
-
+import com.indisparte.news.model.Article
 
 private val TAG = AppDatabase::class.simpleName
 

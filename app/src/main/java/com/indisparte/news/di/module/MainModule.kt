@@ -2,8 +2,7 @@ package com.indisparte.news.di.module
 
 import android.content.Context
 import com.indisparte.common_utils.Navigator
-import com.indisparte.news.navigation.DefaultNavigator
-import com.indisparte.news.room.AppDatabase
+import com.indisparte.news.DefaultNavigator
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,14 +23,5 @@ object MainModule {
         return DefaultNavigator()
     }
 
-    @Singleton
-    @Provides
-    fun provideNewsDatabase(@ApplicationContext context: Context): AppDatabase {
-        return AppDatabase.getInstance(context)
-    }
 
-    @Provides
-    fun providesNewsDAO(appDatabase: AppDatabase): NewsDAO {
-        return appDatabase.getNewsDao()
-    }
 }

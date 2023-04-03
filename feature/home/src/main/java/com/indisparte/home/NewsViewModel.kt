@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 
-private val TAG = NewsViewModel::class.simpleName
 
 /**
  * @author Antonio Di Nuzzo (Indisparte)

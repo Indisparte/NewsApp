@@ -43,7 +43,6 @@ dependencies {
     implementation project(":feature:search")
     implementation project(":feature:home")
     implementation project(":common:common_utils")
-    implementation project(":navigation")
 
 
     implementation Dependencies.core
