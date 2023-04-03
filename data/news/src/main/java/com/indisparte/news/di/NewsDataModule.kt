@@ -1,8 +1,11 @@
 package com.indisparte.news.di
 
 import com.indisparte.news.network.NewsApiService
+import com.indisparte.news.network.SearchApi
 import com.indisparte.news.repository.NewsRepository
 import com.indisparte.news.repository.NewsRepositoryImpl
+import com.indisparte.news.repository.SearchRepository
+import com.indisparte.news.repository.SearchRepositoryImpl
 import com.indisparte.news.room.NewsDAO
 import dagger.Module
 import dagger.Provides
@@ -25,6 +28,16 @@ object NewsDataModule {
     @Provides
     fun provideNewsRepository(newsApiService: NewsApiService, newsDAO: NewsDAO): NewsRepository {
         return NewsRepositoryImpl(newsApiService, newsDAO)
+    }
+
+    @Provides
+    fun providesSearchApi(retrofit: Retrofit): SearchApi {
+        return retrofit.create(SearchApi::class.java)
+    }
+
+    @Provides
+    fun provideSearchRepository(searchApi: SearchApi): SearchRepository {
+        return SearchRepositoryImpl(searchApi)
     }
 
 
