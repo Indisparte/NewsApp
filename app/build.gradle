@@ -44,9 +44,7 @@ dependencies {
     implementation project(":news:news_presentation")
     implementation project(":common:common_utils")
 
-    implementation project(":news:news_domain")
     implementation project(":news:news_data")
-    implementation project(":search:search_domain")
     implementation project(":search:search_data")
 
     implementation Dependencies.core
