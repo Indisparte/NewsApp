@@ -1,4 +1,4 @@
-package com.indisparte.news
+package com.indisparte.news.application
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

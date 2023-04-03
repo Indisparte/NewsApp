@@ -1,9 +1,9 @@
-package com.indisparte.news.navigation
+package com.indisparte.navigation
 
 import com.indisparte.common_utils.Activities
 import com.indisparte.common_utils.Navigator
-import com.indisparte.news_presentation.GoToNewsActivity
-import com.indisparte.search_presentation.GoToSearchActivity
+import com.indisparte.home.GoToNewsActivity
+import com.indisparte.search.GoToSearchActivity
 
 
 private val TAG = DefaultNavigator::class.simpleName
@@ -14,8 +14,12 @@ private val TAG = DefaultNavigator::class.simpleName
 class DefaultNavigator : Navigator.Provider {
     override fun getActivities(activities: Activities): Navigator {
         return when (activities) {
-            Activities.NewsActivity -> {GoToNewsActivity}
-            Activities.SearchActivity -> {GoToSearchActivity}
+            Activities.NewsActivity -> {
+                GoToNewsActivity
+            }
+            Activities.SearchActivity -> {
+                GoToSearchActivity
+            }
         }
     }
 

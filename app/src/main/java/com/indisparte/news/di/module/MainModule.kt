@@ -1,10 +1,9 @@
-package com.indisparte.news
+package com.indisparte.news.di.module
 
 import android.content.Context
 import com.indisparte.common_utils.Navigator
 import com.indisparte.news.navigation.DefaultNavigator
 import com.indisparte.news.room.AppDatabase
-import com.indisparte.news_data.room.NewsDAO
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
