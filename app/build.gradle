@@ -41,7 +41,7 @@ android {
 
 dependencies {
     implementation project(":search:search_presentation")
-    implementation project(":news:news_presentation")
+    implementation project(":feature:home")
     implementation project(":common:common_utils")
 
 
