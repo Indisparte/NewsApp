@@ -8,6 +8,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 /**
  * @author Antonio Di Nuzzo (Indisparte)
@@ -16,11 +17,13 @@ import dagger.hilt.components.SingletonComponent
 @Module
 object NewsDomainModule {
 
+    @Singleton
     @Provides
     fun provideGetNewsUseCase(newsRepository: NewsRepository): GetNewsArticleUseCase {
         return GetNewsArticleUseCase(newsRepository)
     }
 
+    @Singleton
     @Provides
     fun provideSearchUseCase(searchRepository: SearchRepository): GetSearchArticleUseCase {
         return GetSearchArticleUseCase(searchRepository)

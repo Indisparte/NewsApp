@@ -3,10 +3,10 @@ package com.indisparte.news.di.module
 import android.content.Context
 import com.indisparte.common_utils.Navigator
 import com.indisparte.news.DefaultNavigator
+import com.indisparte.news.application.BaseApplication
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -15,12 +15,18 @@ import javax.inject.Singleton
  */
 @InstallIn(SingletonComponent::class)
 @Module
-object MainModule {
+object ApplicationModule {
 
     @Provides
     @Singleton
     fun provideProvider(): Navigator.Provider {
         return DefaultNavigator()
+    }
+
+    @Provides
+    @Singleton
+    fun provideApplicationContext(app: BaseApplication): Context {
+        return app.applicationContext
     }
 
 

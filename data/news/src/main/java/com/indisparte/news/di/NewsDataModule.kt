@@ -9,6 +9,8 @@ import com.indisparte.news.repository.SearchRepository
 import com.indisparte.news.repository.SearchRepositoryImpl
 import com.indisparte.news.room.AppDatabase
 import com.indisparte.news.room.NewsDAO
+import com.indisparte.news.use_case.GetNewsArticleUseCase
+import com.indisparte.news.use_case.GetSearchArticleUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,15 +32,22 @@ object NewsDataModule {
     }
 
     @Provides
-    fun provideNewsRepository(newsApiService: NewsApiService, newsDAO: NewsDAO): NewsRepository {
-        return NewsRepositoryImpl(newsApiService, newsDAO)
-    }
-
-    @Provides
     fun providesSearchApi(retrofit: Retrofit): SearchApi {
         return retrofit.create(SearchApi::class.java)
     }
 
+    @Provides
+    fun providesNewsDAO(appDatabase: AppDatabase): NewsDAO {
+        return appDatabase.getNewsDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideNewsRepository(newsApiService: NewsApiService, newsDAO: NewsDAO): NewsRepository {
+        return NewsRepositoryImpl(newsApiService, newsDAO)
+    }
+
+    @Singleton
     @Provides
     fun provideSearchRepository(searchApi: SearchApi): SearchRepository {
         return SearchRepositoryImpl(searchApi)
@@ -50,10 +59,8 @@ object NewsDataModule {
         return AppDatabase.getInstance(context)
     }
 
-    @Provides
-    fun providesNewsDAO(appDatabase: AppDatabase): NewsDAO {
-        return appDatabase.getNewsDao()
-    }
+
+
 
 
 }
